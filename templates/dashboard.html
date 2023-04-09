@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<h1 align="center" style="color:skyblue">City Details</h1>
+<center>
+  <div class="container mt-3">
+  <table class="table table-bordered">
+    <tr>
+      <th>Name</th>
+      <th>CountryCode</th>
+      <th>District</th>
+      <th>Population</th>
+      <th>Action</th>
+    </tr>
+    {% for i in value %}
+    <tr>
+      <td>{{i.name}}</td>
+      <td>{{i.countrycode}}</td>
+      <td>{{i.district}}</td>
+      <td>{{i.population}}</td>
+      <td>
+        <a href="/dashboard_delete/{{i.id}}">Delete</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+    </div>
+  <br>
+  <br>
+  {% if a %}
+  <form method="post">
+    <div class="container mt-3">
+    <table class="table table-bordered">
+      <tr>
+        <td>
+          <label>Name</label>
+        </td>
+        <td>
+          {{a.name}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>CountryCode</label>
+        </td>
+        <td>
+          {{a.countrycode}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>District</label>
+        </td>
+        <td>
+          {{a.district}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Population</label>
+        </td>
+        <td>
+          {{a.population}}
+        </td>
+      </tr>
+    </table>
+    </div>
+  </form>
+  {% endif %}
+</center>
+</body>
+</html>
